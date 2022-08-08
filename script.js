@@ -49,29 +49,64 @@ const btnClear = document.getElementById('btnClear')
 const btnEqual = document.getElementById('btnOperate')
     btnEqual.addEventListener('click', () => {
         operate(num1, num2, operator)
+        num1 = operate(num1, num2, operator)
+        num2 = null
+        operator = null
     })
 const btnAdd = document.getElementById('btnAdd')
     btnAdd.addEventListener('click', () => {
         if (operator === null) {
             operator = add
+            operatorSign = '+'
+            setDisplay(num1 + operatorSign)
+        } else {
+            num1 = operate(num1, num2, operator)
+            num2 = null
+            operator = add
+            operatorSign = '+'
+            setDisplay(num1 + operatorSign)            
         }
     })
 const btnSubtract = document.getElementById('btnSubtract')
     btnSubtract.addEventListener('click', () => {
         if (operator === null) {
             operator = subtract
+            operatorSign = '-'
+            setDisplay(num1 + operatorSign)
+        } else {
+            num1 = operate(num1, num2, operator)
+            num2 = null
+            operator = subtract
+            operatorSign = '-'
+            setDisplay(num1 + operatorSign)            
         }
     })
 const btnMultiply = document.getElementById('btnMultiply')
     btnMultiply.addEventListener('click', () => {
         if (operator === null) {
             operator = multiply
+            operatorSign = '*'
+            setDisplay(num1 + operatorSign)
+        } else {
+            num1 = operate(num1, num2, operator)
+            num2 = null
+            operator = multiply
+            operatorSign = '*'
+            setDisplay(num1 + operatorSign)            
         }
     })
 const btnDivide = document.getElementById('btnDivide')
     btnDivide.addEventListener('click', () => {
         if (operator === null) {
             operator = divide
+            operatorSign = '/'
+            setDisplay(num1 + operatorSign)
+        } else {
+            num1 = operate(num1, num2, operator)
+            num2 = null
+            operator = divide
+            operatorSign = '/'
+            setDisplay(num1 + operatorSign)            
         }
     })
 
@@ -91,7 +126,6 @@ function divide(a, b) {
     return a / b
 }
 function operate(a, b, operator) {
-    Number(a, b)
     setDisplay(operator(a, b))
     return operator(a, b)
 }
@@ -107,11 +141,17 @@ function clearAll() {
 function setNums(digit) {
     if (num1 === null) {
         num1 = digit
+        setDisplay(num1)
     } else if (num1 !== null && operator === null) {
         num1 += `${digit}`
+        num1 = Number(num1)
+        setDisplay(num1)
     } else if (num1 !== null && operator !== null && num2 === null) {
         num2 = digit
+        setDisplay(num1 + operatorSign + num2)
     } else if (num1 !== null && operator !== null && num2 !== null) {
         num2 += `${digit}`
+        num2 = Number(num2)
+        setDisplay(num1 + operatorSign + num2)
     }
 }
