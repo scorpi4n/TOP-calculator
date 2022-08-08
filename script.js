@@ -3,8 +3,7 @@ let num2 = null
 let operator = null
 
 const display = document.getElementById('display')
-    let displayValue = 'Welcome!'
-    display.innerText = displayValue
+    setDisplay('Welcome!')
 const btnOne = document.getElementById('btnOne')
     btnOne.addEventListener('click', () => {
         setNums(1)
@@ -53,19 +52,27 @@ const btnEqual = document.getElementById('btnOperate')
     })
 const btnAdd = document.getElementById('btnAdd')
     btnAdd.addEventListener('click', () => {
-        operator = add
+        if (operator === null) {
+            operator = add
+        }
     })
 const btnSubtract = document.getElementById('btnSubtract')
     btnSubtract.addEventListener('click', () => {
-        operator = subtract
+        if (operator === null) {
+            operator = subtract
+        }
     })
 const btnMultiply = document.getElementById('btnMultiply')
     btnMultiply.addEventListener('click', () => {
-        operator = multiply
+        if (operator === null) {
+            operator = multiply
+        }
     })
 const btnDivide = document.getElementById('btnDivide')
     btnDivide.addEventListener('click', () => {
-        operator = divide
+        if (operator === null) {
+            operator = divide
+        }
     })
 
 function add(a, b) {
@@ -84,6 +91,7 @@ function divide(a, b) {
     return a / b
 }
 function operate(a, b, operator) {
+    Number(a, b)
     setDisplay(operator(a, b))
     return operator(a, b)
 }
@@ -94,8 +102,6 @@ function clearAll() {
     num1 = null
     num2 = null
     operator = null
-    // displayValue = 0
-    // display.innerText = displayValue
     setDisplay(0)
 }
 function setNums(digit) {
