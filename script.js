@@ -1,48 +1,70 @@
-let num1 = 0
-let num2 = 0
-let operator
+let num1 = null
+let num2 = null
+let operator = null
 
 const display = document.getElementById('display')
     let displayValue = 'Welcome!'
     display.innerText = displayValue
-const one = document.getElementById('btnOne')
-    // one.addEventListener('click', )
-const two = document.getElementById('btnTwo')
-    // two.addEventListener('click', )
-const three = document.getElementById('btnThree')
-    // three.addEventListener('click', )
-const four = document.getElementById('btnFour')
-    // four.addEventListener('click', )
-const five = document.getElementById('btnFive')
-    // five.addEventListener('click', )
-const six = document.getElementById('btnSix')
-    // six.addEventListener('click', )
-const seven = document.getElementById('btnSeven')
-    // seven.addEventListener('click', )
-const eight = document.getElementById('btnEight')
-    // eight.addEventListener('click', )
-const nine = document.getElementById('btnNine')
-    // nine.addEventListener('click', )
-const zero = document.getElementById('btnZero')
-    // zero.addEventListener('click', )
-const clear = document.getElementById('btnClear')
-    // clear.addEventListener('click', )
-const equal = document.getElementById('btnOperate')
-    equal.addEventListener('click', operate(num1, num2, operator))
-const addition = document.getElementById('btnAdd')
-    addition.addEventListener('click', () => {
+const btnOne = document.getElementById('btnOne')
+    btnOne.addEventListener('click', () => {
+        setNums(1)
+    })
+const btnTwo = document.getElementById('btnTwo')
+    btnTwo.addEventListener('click', () => {
+        setNums(2)
+    })
+const btnThree = document.getElementById('btnThree')
+    btnThree.addEventListener('click', () => {
+        setNums(3)
+    })
+const btnFour = document.getElementById('btnFour')
+    btnFour.addEventListener('click', () => {
+        setNums(4)
+    })
+const btnFive = document.getElementById('btnFive')
+    btnFive.addEventListener('click', () => {
+        setNums(5)
+    })
+const btnSix = document.getElementById('btnSix')
+    btnSix.addEventListener('click', () => {
+        setNums(6)
+    })
+const btnSeven = document.getElementById('btnSeven')
+    btnSeven.addEventListener('click', () => {
+        setNums(7)
+    })
+const btnEight = document.getElementById('btnEight')
+    btnEight.addEventListener('click', () => {
+        setNums(8)
+    })
+const btnNine = document.getElementById('btnNine')
+    btnNine.addEventListener('click', () => {
+        setNums(9)
+    })
+const btnZero = document.getElementById('btnZero')
+    btnZero.addEventListener('click', () => {
+        setNums(0)
+    })
+const btnClear = document.getElementById('btnClear')
+    btnClear.addEventListener('click', clearAll)
+const btnEqual = document.getElementById('btnOperate')
+    btnEqual.addEventListener('click', () => {
+        operate(num1, num2, operator)
+    })
+const btnAdd = document.getElementById('btnAdd')
+    btnAdd.addEventListener('click', () => {
         operator = add
     })
-const subtraction = document.getElementById('btnSubtract')
-    subtraction.addEventListener('click', () => {
+const btnSubtract = document.getElementById('btnSubtract')
+    btnSubtract.addEventListener('click', () => {
         operator = subtract
     })
-const multiplication = document.getElementById('btnMultiply')
-    multiplication.addEventListener('click', () => {
+const btnMultiply = document.getElementById('btnMultiply')
+    btnMultiply.addEventListener('click', () => {
         operator = multiply
     })
-const division = document.getElementById('btnDivide')
-    division.addEventListener('click', () => {
+const btnDivide = document.getElementById('btnDivide')
+    btnDivide.addEventListener('click', () => {
         operator = divide
     })
 
@@ -69,17 +91,21 @@ function setDisplay(displayValue) {
     display.innerText = displayValue
 }
 function clearAll() {
-    num1 = 0
-    num2 = 0
+    num1 = null
+    num2 = null
     operator = null
-    displayValue = 0
-    display.innerText = displayValue
+    // displayValue = 0
+    // display.innerText = displayValue
+    setDisplay(0)
 }
-
-
-
-// 1 + 2
-// 
-// hit btnOne => set display to 1, store value for operate()
-// hit btnAdd => change color of btnAdd, store operator for operate()
-// hit btnTwo => store value for operate() and execute
+function setNums(digit) {
+    if (num1 === null) {
+        num1 = digit
+    } else if (num1 !== null && operator === null) {
+        num1 += `${digit}`
+    } else if (num1 !== null && operator !== null && num2 === null) {
+        num2 = digit
+    } else if (num1 !== null && operator !== null && num2 !== null) {
+        num2 += `${digit}`
+    }
+}
