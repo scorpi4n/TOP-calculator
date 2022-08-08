@@ -55,7 +55,9 @@ const btnEqual = document.getElementById('btnOperate')
     })
 const btnAdd = document.getElementById('btnAdd')
     btnAdd.addEventListener('click', () => {
-        if (operator === null) {
+        if (num1 === null) {
+            setDisplay("Start with a number first.")
+        } else if (operator === null) {
             operator = add
             operatorSign = '+'
             setDisplay(num1 + operatorSign)
@@ -69,7 +71,9 @@ const btnAdd = document.getElementById('btnAdd')
     })
 const btnSubtract = document.getElementById('btnSubtract')
     btnSubtract.addEventListener('click', () => {
-        if (operator === null) {
+        if (num1 === null) {
+            setDisplay("Start with a number first.")
+        } else if (operator === null) {
             operator = subtract
             operatorSign = '-'
             setDisplay(num1 + operatorSign)
@@ -83,7 +87,9 @@ const btnSubtract = document.getElementById('btnSubtract')
     })
 const btnMultiply = document.getElementById('btnMultiply')
     btnMultiply.addEventListener('click', () => {
-        if (operator === null) {
+        if (num1 === null) {
+            setDisplay("Start with a number first.")
+        } else if (operator === null) {
             operator = multiply
             operatorSign = '*'
             setDisplay(num1 + operatorSign)
@@ -97,7 +103,9 @@ const btnMultiply = document.getElementById('btnMultiply')
     })
 const btnDivide = document.getElementById('btnDivide')
     btnDivide.addEventListener('click', () => {
-        if (operator === null) {
+        if (num1 === null) {
+            setDisplay("Start with a number first.")
+        } else if (operator === null) {
             operator = divide
             operatorSign = '/'
             setDisplay(num1 + operatorSign)
