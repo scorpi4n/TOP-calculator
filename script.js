@@ -2,118 +2,118 @@ let num1 = null;
 let num2 = null;
 let operator = null;
 
-const display = document.getElementById("display");
-setDisplay("Welcome!");
-const btnOne = document.getElementById("btnOne");
-btnOne.addEventListener("click", () => {
+const display = document.getElementById('display');
+setDisplay('Welcome!');
+const btnOne = document.getElementById('btnOne');
+btnOne.addEventListener('click', () => {
 	setNums(1);
 });
-const btnTwo = document.getElementById("btnTwo");
-btnTwo.addEventListener("click", () => {
+const btnTwo = document.getElementById('btnTwo');
+btnTwo.addEventListener('click', () => {
 	setNums(2);
 });
-const btnThree = document.getElementById("btnThree");
-btnThree.addEventListener("click", () => {
+const btnThree = document.getElementById('btnThree');
+btnThree.addEventListener('click', () => {
 	setNums(3);
 });
-const btnFour = document.getElementById("btnFour");
-btnFour.addEventListener("click", () => {
+const btnFour = document.getElementById('btnFour');
+btnFour.addEventListener('click', () => {
 	setNums(4);
 });
-const btnFive = document.getElementById("btnFive");
-btnFive.addEventListener("click", () => {
+const btnFive = document.getElementById('btnFive');
+btnFive.addEventListener('click', () => {
 	setNums(5);
 });
-const btnSix = document.getElementById("btnSix");
-btnSix.addEventListener("click", () => {
+const btnSix = document.getElementById('btnSix');
+btnSix.addEventListener('click', () => {
 	setNums(6);
 });
-const btnSeven = document.getElementById("btnSeven");
-btnSeven.addEventListener("click", () => {
+const btnSeven = document.getElementById('btnSeven');
+btnSeven.addEventListener('click', () => {
 	setNums(7);
 });
-const btnEight = document.getElementById("btnEight");
-btnEight.addEventListener("click", () => {
+const btnEight = document.getElementById('btnEight');
+btnEight.addEventListener('click', () => {
 	setNums(8);
 });
-const btnNine = document.getElementById("btnNine");
-btnNine.addEventListener("click", () => {
+const btnNine = document.getElementById('btnNine');
+btnNine.addEventListener('click', () => {
 	setNums(9);
 });
-const btnZero = document.getElementById("btnZero");
-btnZero.addEventListener("click", () => {
+const btnZero = document.getElementById('btnZero');
+btnZero.addEventListener('click', () => {
 	setNums(0);
 });
-const btnClear = document.getElementById("btnClear");
-btnClear.addEventListener("click", clearAll);
-const btnEqual = document.getElementById("btnOperate");
-btnEqual.addEventListener("click", () => {
+const btnClear = document.getElementById('btnClear');
+btnClear.addEventListener('click', clearAll);
+const btnEqual = document.getElementById('btnOperate');
+btnEqual.addEventListener('click', () => {
 	operate(num1, num2, operator);
 	num1 = operate(num1, num2, operator);
 	num2 = null;
 	operator = null;
 });
-const btnAdd = document.getElementById("btnAdd");
-btnAdd.addEventListener("click", () => {
+const btnAdd = document.getElementById('btnAdd');
+btnAdd.addEventListener('click', () => {
 	if (num1 === null) {
-		setDisplay("Start with a number first.");
+		setDisplay('Start with a number first.');
 	} else if (operator === null) {
 		operator = add;
-		operatorSign = "+";
+		operatorSign = '+';
 		setDisplay(num1 + operatorSign);
 	} else {
 		num1 = operate(num1, num2, operator);
 		num2 = null;
 		operator = add;
-		operatorSign = "+";
+		operatorSign = '+';
 		setDisplay(num1 + operatorSign);
 	}
 });
-const btnSubtract = document.getElementById("btnSubtract");
-btnSubtract.addEventListener("click", () => {
+const btnSubtract = document.getElementById('btnSubtract');
+btnSubtract.addEventListener('click', () => {
 	if (num1 === null) {
-		setDisplay("Start with a number first.");
+		setDisplay('Start with a number first.');
 	} else if (operator === null) {
 		operator = subtract;
-		operatorSign = "-";
+		operatorSign = '-';
 		setDisplay(num1 + operatorSign);
 	} else {
 		num1 = operate(num1, num2, operator);
 		num2 = null;
 		operator = subtract;
-		operatorSign = "-";
+		operatorSign = '-';
 		setDisplay(num1 + operatorSign);
 	}
 });
-const btnMultiply = document.getElementById("btnMultiply");
-btnMultiply.addEventListener("click", () => {
+const btnMultiply = document.getElementById('btnMultiply');
+btnMultiply.addEventListener('click', () => {
 	if (num1 === null) {
-		setDisplay("Start with a number first.");
+		setDisplay('Start with a number first.');
 	} else if (operator === null) {
 		operator = multiply;
-		operatorSign = "*";
+		operatorSign = '*';
 		setDisplay(num1 + operatorSign);
 	} else {
 		num1 = operate(num1, num2, operator);
 		num2 = null;
 		operator = multiply;
-		operatorSign = "*";
+		operatorSign = '*';
 		setDisplay(num1 + operatorSign);
 	}
 });
-const btnDivide = document.getElementById("btnDivide");
-btnDivide.addEventListener("click", () => {
+const btnDivide = document.getElementById('btnDivide');
+btnDivide.addEventListener('click', () => {
 	if (num1 === null) {
-		setDisplay("Start with a number first.");
+		setDisplay('Start with a number first.');
 	} else if (operator === null) {
 		operator = divide;
-		operatorSign = "/";
+		operatorSign = '/';
 		setDisplay(num1 + operatorSign);
 	} else {
 		num1 = operate(num1, num2, operator);
 		num2 = null;
 		operator = divide;
-		operatorSign = "/";
+		operatorSign = '/';
 		setDisplay(num1 + operatorSign);
 	}
 });

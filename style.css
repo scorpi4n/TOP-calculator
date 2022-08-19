@@ -30,7 +30,7 @@ body {
 	width: 310px;
 	height: 100px;
 	background-color: var(--clr-light-brown);
-	font-family: "Orbitron", sans-serif;
+	font-family: 'Orbitron', sans-serif;
 	font-size: 25px;
 	vertical-align: bottom;
 	border: 2px solid var(--clr-dark-brown);
@@ -57,7 +57,7 @@ body {
 	border: 0;
 	box-shadow: none;
 	font-size: 18px;
-	font-family: "Orbitron", sans-serif;
+	font-family: 'Orbitron', sans-serif;
 	background-color: var(--clr-light-brown);
 }
 
