@@ -5,3 +5,70 @@
     --clr-medium-brown: #845A4B;
     --clr-light-brown: #CC967B;
 }
+
+body {
+    background-color: var(--clr-dark-brown);
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+  }
+
+#calculator {
+    width: 350px;
+    height: 500px;
+    margin: auto;
+    background-color: var(--clr-medium-brown);
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    box-sizing: border-box;
+}
+
+.screen {
+    margin: 20px;
+    width: 310px;
+    height: 100px;
+    background-color: var(--clr-light-brown);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;  
+    vertical-align: bottom;
+    border: 2px solid var(--clr-dark-brown);
+}
+
+#display {
+    display: block;
+    box-sizing: border-box;
+    width: 312px;
+    padding: 12px;
+    text-align: right;
+}
+
+.buttons {
+    background-color: black;
+    margin: 0 20px 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1px 1px;
+    border: 2px solid var(--clr-dark-brown);
+}
+
+.buttons > button {
+    border: 0;
+    box-shadow: none;  
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
+    background-color: var(--clr-light-brown);
+}
+
+#btnMultiply,
+#btnDivide,
+#btnSubtract,
+#btnAdd {
+    background-color: var(--clr-green);
+}
+
+#btnClear,
+#btnOperate {
+    background-color: var(--clr-red);
+}
