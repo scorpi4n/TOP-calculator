@@ -1,13 +1,13 @@
 :root {
-	--clr-red: #ac372b;
-	--clr-green: #407f3d;
-	--clr-dark-brown: #2b241d;
-	--clr-medium-brown: #845a4b;
-	--clr-light-brown: #cc967b;
+	--clr-red: #83564f;
+	--clr-orange: #ad8753;
+	--clr-light-green: #b8b66c;
+	--clr-dark-green: #6b8556;
+	--clr-blue: #464e5d;
 }
 
 body {
-	background-color: var(--clr-dark-brown);
+	background-color: var(--clr-light-green);
 }
 
 .container {
@@ -19,7 +19,7 @@ body {
 	width: 350px;
 	height: 500px;
 	margin: auto;
-	background-color: var(--clr-medium-brown);
+	background-color: var(--clr-blue);
 	display: grid;
 	grid-template-rows: 1fr 4fr;
 	box-sizing: border-box;
@@ -29,11 +29,11 @@ body {
 	margin: 20px;
 	width: 310px;
 	height: 100px;
-	background-color: var(--clr-light-brown);
+	background-color: whitesmoke;
 	font-family: 'Orbitron', sans-serif;
 	font-size: 25px;
 	vertical-align: bottom;
-	border: 2px solid var(--clr-dark-brown);
+	border: 2px solid var(--clr-light-green);
 }
 
 #display {
@@ -49,23 +49,23 @@ body {
 	margin: 0 20px 20px 20px;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	grid-gap: 1px 1px;
-	border: 2px solid var(--clr-dark-brown);
+	gap: 1px;
+	border: 2px solid var(--clr-light-green);
 }
 
-.buttons > button {
+.buttons>button {
 	border: 0;
 	box-shadow: none;
 	font-size: 18px;
 	font-family: 'Orbitron', sans-serif;
-	background-color: var(--clr-light-brown);
+	background-color: var(--clr-orange);
 }
 
 #btnMultiply,
 #btnDivide,
 #btnSubtract,
 #btnAdd {
-	background-color: var(--clr-green);
+	background-color: var(--clr-dark-green);
 }
 
 #btnClear,
