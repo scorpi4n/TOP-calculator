@@ -2,6 +2,40 @@ let num1 = null;
 let num2 = null;
 let operator = null;
 
+const operations = (function() {
+	function add(a, b) {
+		return a + b;
+	}
+	
+	function subtract(a, b) {
+		return a - b;
+	}
+	
+	function multiply(a, b) {
+		return a * b;
+	}
+	
+	function divide(a, b) {
+		if (b === 0) {
+			return "Ask a mathematician! I'm just a calcualator!";
+		}
+		return a / b;
+	}
+	
+	function operate(a, b, operator) {
+		html.setDisplay(operator(a, b));
+		return operator(a, b);
+	}
+
+	return {
+		add,
+		subtract,
+		multiply,
+		divide,
+		operate
+	}
+})()
+
 const html = (function() {
 	const display     = document.getElementById('display');
 	const oneBtn      = document.getElementById('btnOne');
@@ -66,7 +100,7 @@ const html = (function() {
 
 		equalBtn.addEventListener('click', () => {
 			// operate(num1, num2, operator);
-			num1 = operate(num1, num2, operator);
+			num1 = operations.operate(num1, num2, operator);
 			num2 = null;
 			operator = null;
 		});
@@ -75,13 +109,13 @@ const html = (function() {
 			if (num1 === null) {
 				setDisplay('Start with a number first.');
 			} else if (operator === null) {
-				operator = add;
+				operator = operations.add;
 				operatorSign = '+';
 				setDisplay(num1 + operatorSign);
 			} else {
-				num1 = operate(num1, num2, operator);
+				num1 = operations.operate(num1, num2, operator);
 				num2 = null;
-				operator = add;
+				operator = operations.add;
 				operatorSign = '+';
 				setDisplay(num1 + operatorSign);
 			}
@@ -91,13 +125,13 @@ const html = (function() {
 			if (num1 === null) {
 				setDisplay('Start with a number first.');
 			} else if (operator === null) {
-				operator = subtract;
+				operator = operations.subtract;
 				operatorSign = '-';
 				setDisplay(num1 + operatorSign);
 			} else {
-				num1 = operate(num1, num2, operator);
+				num1 = operations.operate(num1, num2, operator);
 				num2 = null;
-				operator = subtract;
+				operator = operations.subtract;
 				operatorSign = '-';
 				setDisplay(num1 + operatorSign);
 			}
@@ -107,13 +141,13 @@ const html = (function() {
 			if (num1 === null) {
 				setDisplay('Start with a number first.');
 			} else if (operator === null) {
-				operator = multiply;
+				operator = operations.multiply;
 				operatorSign = '*';
 				setDisplay(num1 + operatorSign);
 			} else {
-				num1 = operate(num1, num2, operator);
+				num1 = operations.operate(num1, num2, operator);
 				num2 = null;
-				operator = multiply;
+				operator = operations.multiply;
 				operatorSign = '*';
 				setDisplay(num1 + operatorSign);
 			}
@@ -123,13 +157,13 @@ const html = (function() {
 			if (num1 === null) {
 				setDisplay('Start with a number first.');
 			} else if (operator === null) {
-				operator = divide;
+				operator = operations.divide;
 				operatorSign = '/';
 				setDisplay(num1 + operatorSign);
 			} else {
-				num1 = operate(num1, num2, operator);
+				num1 = operations.operate(num1, num2, operator);
 				num2 = null;
-				operator = divide;
+				operator = operations.divide;
 				operatorSign = '/';
 				setDisplay(num1 + operatorSign);
 			}
@@ -145,36 +179,13 @@ const html = (function() {
 	}
 })()
 
-html.setDisplay('Welcome!');
-
-
-
-function add(a, b) {
-	return a + b;
-}
-function subtract(a, b) {
-	return a - b;
-}
-function multiply(a, b) {
-	return a * b;
-}
-function divide(a, b) {
-	if (b === 0) {
-		return "Ask a mathematician! I'm just a calcualator!";
-	}
-	return a / b;
-}
-function operate(a, b, operator) {
-	html.setDisplay(operator(a, b));
-	return operator(a, b);
-}
-
 function clearAll() {
 	num1 = null;
 	num2 = null;
 	operator = null;
 	html.setDisplay(0);
 }
+
 function setNums(digit) {
 	if (num1 === null) {
 		num1 = digit;
@@ -192,3 +203,6 @@ function setNums(digit) {
 		html.setDisplay(num1 + operatorSign + num2);
 	}
 }
+
+// set welcome notice
+html.setDisplay('Welcome!');
