@@ -1,0 +1,17 @@
+export const display = document.getElementById("display");
+export const oneBtn = document.getElementById("btnOne");
+export const twoBtn = document.getElementById("btnTwo");
+export const threeBtn = document.getElementById("btnThree");
+export const fourBtn = document.getElementById("btnFour");
+export const fiveBtn = document.getElementById("btnFive");
+export const sixBtn = document.getElementById("btnSix");
+export const sevenBtn = document.getElementById("btnSeven");
+export const eightBtn = document.getElementById("btnEight");
+export const nineBtn = document.getElementById("btnNine");
+export const zeroBtn = document.getElementById("btnZero");
+export const clearBtn = document.getElementById("btnClear");
+export const equalBtn = document.getElementById("btnOperate");
+export const addBtn = document.getElementById("btnAdd");
+export const subtractBtn = document.getElementById("btnSubtract");
+export const multiplyBtn = document.getElementById("btnMultiply");
+export const divideBtn = document.getElementById("btnDivide");
