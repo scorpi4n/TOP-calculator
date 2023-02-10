@@ -2,26 +2,26 @@ let num1 = null;
 let num2 = null;
 let operator = null;
 
-const operations = (function() {
+const operations = (function () {
 	function add(a, b) {
 		return a + b;
 	}
-	
+
 	function subtract(a, b) {
 		return a - b;
 	}
-	
+
 	function multiply(a, b) {
 		return a * b;
 	}
-	
+
 	function divide(a, b) {
 		if (b === 0) {
 			return "Ask a mathematician! I'm just a calcualator!";
 		}
 		return a / b;
 	}
-	
+
 	function operate(a, b, operator) {
 		html.setDisplay(operator(a, b));
 		return operator(a, b);
@@ -32,152 +32,152 @@ const operations = (function() {
 		subtract,
 		multiply,
 		divide,
-		operate
-	}
-})()
+		operate,
+	};
+})();
 
-const html = (function() {
-	const display     = document.getElementById('display');
-	const oneBtn      = document.getElementById('btnOne');
-	const twoBtn      = document.getElementById('btnTwo');
-	const threeBtn    = document.getElementById('btnThree');
-	const fourBtn     = document.getElementById('btnFour');
-	const fiveBtn     = document.getElementById('btnFive');
-	const sixBtn      = document.getElementById('btnSix');
-	const sevenBtn    = document.getElementById('btnSeven');
-	const eightBtn    = document.getElementById('btnEight');
-	const nineBtn     = document.getElementById('btnNine');
-	const zeroBtn     = document.getElementById('btnZero');
-	const clearBtn    = document.getElementById('btnClear');
-	const equalBtn    = document.getElementById('btnOperate');
-	const addBtn      = document.getElementById('btnAdd');
-	const subtractBtn = document.getElementById('btnSubtract');
-	const multiplyBtn = document.getElementById('btnMultiply');
-	const divideBtn   = document.getElementById('btnDivide');
+const html = (function () {
+	const display = document.getElementById("display");
+	const oneBtn = document.getElementById("btnOne");
+	const twoBtn = document.getElementById("btnTwo");
+	const threeBtn = document.getElementById("btnThree");
+	const fourBtn = document.getElementById("btnFour");
+	const fiveBtn = document.getElementById("btnFive");
+	const sixBtn = document.getElementById("btnSix");
+	const sevenBtn = document.getElementById("btnSeven");
+	const eightBtn = document.getElementById("btnEight");
+	const nineBtn = document.getElementById("btnNine");
+	const zeroBtn = document.getElementById("btnZero");
+	const clearBtn = document.getElementById("btnClear");
+	const equalBtn = document.getElementById("btnOperate");
+	const addBtn = document.getElementById("btnAdd");
+	const subtractBtn = document.getElementById("btnSubtract");
+	const multiplyBtn = document.getElementById("btnMultiply");
+	const divideBtn = document.getElementById("btnDivide");
 
-	(function() {
-		oneBtn.addEventListener('click', () => {
+	(function () {
+		oneBtn.addEventListener("click", () => {
 			setNums(1);
 		});
 
-		twoBtn.addEventListener('click', () => {
+		twoBtn.addEventListener("click", () => {
 			setNums(2);
 		});
 
-		threeBtn.addEventListener('click', () => {
+		threeBtn.addEventListener("click", () => {
 			setNums(3);
 		});
 
-		fourBtn.addEventListener('click', () => {
+		fourBtn.addEventListener("click", () => {
 			setNums(4);
 		});
 
-		fiveBtn.addEventListener('click', () => {
+		fiveBtn.addEventListener("click", () => {
 			setNums(5);
 		});
 
-		sixBtn.addEventListener('click', () => {
+		sixBtn.addEventListener("click", () => {
 			setNums(6);
 		});
-		
-		sevenBtn.addEventListener('click', () => {
+
+		sevenBtn.addEventListener("click", () => {
 			setNums(7);
 		});
 
-		eightBtn.addEventListener('click', () => {
+		eightBtn.addEventListener("click", () => {
 			setNums(8);
 		});
 
-		nineBtn.addEventListener('click', () => {
+		nineBtn.addEventListener("click", () => {
 			setNums(9);
 		});
 
-		zeroBtn.addEventListener('click', () => {
+		zeroBtn.addEventListener("click", () => {
 			setNums(0);
 		});
 
-		clearBtn.addEventListener('click', clearAll);
+		clearBtn.addEventListener("click", clearAll);
 
-		equalBtn.addEventListener('click', () => {
+		equalBtn.addEventListener("click", () => {
 			// operate(num1, num2, operator);
 			num1 = operations.operate(num1, num2, operator);
 			num2 = null;
 			operator = null;
 		});
 
-		addBtn.addEventListener('click', () => {
+		addBtn.addEventListener("click", () => {
 			if (num1 === null) {
-				setDisplay('Start with a number first.');
+				setDisplay("Start with a number first.");
 			} else if (operator === null) {
 				operator = operations.add;
-				operatorSign = '+';
+				operatorSign = "+";
 				setDisplay(num1 + operatorSign);
 			} else {
 				num1 = operations.operate(num1, num2, operator);
 				num2 = null;
 				operator = operations.add;
-				operatorSign = '+';
+				operatorSign = "+";
 				setDisplay(num1 + operatorSign);
 			}
 		});
 
-		subtractBtn.addEventListener('click', () => {
+		subtractBtn.addEventListener("click", () => {
 			if (num1 === null) {
-				setDisplay('Start with a number first.');
+				setDisplay("Start with a number first.");
 			} else if (operator === null) {
 				operator = operations.subtract;
-				operatorSign = '-';
+				operatorSign = "-";
 				setDisplay(num1 + operatorSign);
 			} else {
 				num1 = operations.operate(num1, num2, operator);
 				num2 = null;
 				operator = operations.subtract;
-				operatorSign = '-';
+				operatorSign = "-";
 				setDisplay(num1 + operatorSign);
 			}
 		});
 
-		multiplyBtn.addEventListener('click', () => {
+		multiplyBtn.addEventListener("click", () => {
 			if (num1 === null) {
-				setDisplay('Start with a number first.');
+				setDisplay("Start with a number first.");
 			} else if (operator === null) {
 				operator = operations.multiply;
-				operatorSign = '*';
+				operatorSign = "*";
 				setDisplay(num1 + operatorSign);
 			} else {
 				num1 = operations.operate(num1, num2, operator);
 				num2 = null;
 				operator = operations.multiply;
-				operatorSign = '*';
+				operatorSign = "*";
 				setDisplay(num1 + operatorSign);
 			}
 		});
 
-		divideBtn.addEventListener('click', () => {
+		divideBtn.addEventListener("click", () => {
 			if (num1 === null) {
-				setDisplay('Start with a number first.');
+				setDisplay("Start with a number first.");
 			} else if (operator === null) {
 				operator = operations.divide;
-				operatorSign = '/';
+				operatorSign = "/";
 				setDisplay(num1 + operatorSign);
 			} else {
 				num1 = operations.operate(num1, num2, operator);
 				num2 = null;
 				operator = operations.divide;
-				operatorSign = '/';
+				operatorSign = "/";
 				setDisplay(num1 + operatorSign);
 			}
 		});
-	})()
+	})();
 
 	function setDisplay(displayValue) {
 		display.innerText = displayValue;
 	}
 
 	return {
-		setDisplay
-	}
-})()
+		setDisplay,
+	};
+})();
 
 function clearAll() {
 	num1 = null;
@@ -205,4 +205,4 @@ function setNums(digit) {
 }
 
 // set welcome notice
-html.setDisplay('Welcome!');
+html.setDisplay("Welcome!");
